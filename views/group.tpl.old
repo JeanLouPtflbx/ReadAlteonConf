@@ -1,0 +1,17 @@
+<table width=100%>
+        <tr bgcolor=#94DBFF><td colspan="2"><center><b>{{NAME}}</b> - group {{GID}}</center></td>
+            % for RID in REALS.split():
+                <td rowspan="2">    
+                %   include('real.tpl',RID=RID,NAME=ListeReals[RID]['name'],ROLE=ListeReals[RID]['role'],INTER=ListeReals[RID]['inter'],RETRY=ListeReals[RID]['retry'],RIP=ListeReals[RID]['rip'])
+            % end
+            </td>
+        </tr>
+        <tr bgcolor=#B2E6FF>
+            <td colspan="2" align=left>
+                <b>metric : </b>{{METRIC}}
+                <br><b>health : </b>{{HEALTH}}
+                <br><b>content : </b>{{CONTENT}}
+            </td>
+        </tr>
+    </table>
+

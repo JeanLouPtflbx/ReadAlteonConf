@@ -1,0 +1,18 @@
+<table width=100%>
+    <tr bgcolor=#5CB8E6>
+        <td colspan="5"><center><b>{{SERVICE}}</b></center></td>
+        <td rowspan=2>
+            % include('group.tpl',GID=GID,NAME=ListeGroups[GID]['name'],METRIC=ListeGroups[GID]['metric'],HEALTH=ListeGroups[GID]['health'],CONTENT=ListeGroups[GID]['content'],REALS=ListeGroups[GID]['reals'])
+            % end
+        </td>
+    <tr bgcolor=#75D1FF>
+        <td>
+            <b>rport : </b>{{RPORT}}
+            <br><b>pbind : </b>{{PBIND}}
+            <br><b>tmout : </b>{{TMOUT}}m
+            <br><b>ptmout : </b>{{PTMOUT}}m
+            <br><b>cookie : </b>{{COOKIE}}
+        </td>
+    </tr>
+</table>
+

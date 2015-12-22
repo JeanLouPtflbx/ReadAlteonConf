@@ -1,0 +1,13 @@
+    <table width=100%>
+        <tr bgcolor=#D1F0FF>
+            <td colspan="2" width=100%><center><b>{{RIP}} {{NAME}}</b> - real {{RID}}</center></td>
+        <tr bgcolor=#F0FAFF width=100%>
+            <td>
+                <b>inter : </b>{{INTER}}s
+                <br><b>retry : </b>{{RETRY}}
+                <br><b>role : </b>{{ROLE}}
+            </td>
+        </tr>
+    </table>
+
+
