@@ -8,4 +8,7 @@ $python3 ReadAlteonConf.py
 The connect to the application with your browser at url :
 http://localhost:9090/
 
+The you can upload your config files.
+
+Enjoy !
 
