@@ -10,7 +10,7 @@ Then connect to the application with your browser at url :
 <br>
 http://localhost:9090/
 
-The you can upload your config files.
+Then you can upload your config files.
 
 Enjoy !
 
