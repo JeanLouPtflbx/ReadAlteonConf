@@ -1,0 +1,606 @@
+script start "Alteon Application Switch 5412XL" 4  /**** DO NOT EDIT THIS LINE!
+/* Configuration dump taken 14:50:38 Mon Mar 30, 2015 (DST)
+/* Configuration last applied at 14:49:12 Mon Mar 30, 2015
+/* Configuration last save at 14:49:23 Mon Mar 30, 2015
+/* Version 28.1.11.0, vADC Id 3,  Base MAC address 
+/* To restore SSL Offloading configuration and management HTTPS access,
+/* it is recommended to include the private keys in the dump.
+/c/sys/mmgmt
+	addr 10.0.0.3
+	mask 255.255.254.0
+	broad 10.0.0.255
+	gw 10.0.0.254
+	ena
+	dns mgmt
+	ntp mgmt
+	snmp mgmt
+	syslog mgmt
+	tftp mgmt
+/c/sys
+	idle 120
+	hprompt ena
+	bannr "Exemple"Exemple"
+/c/sys/access
+	snmp w
+	http ena
+	wport 8081
+	tnet ena
+/c/sys/access/user
+	usrpw "6af5dd032aa01c01a3b6b6ead803acc299153274b7472ace685698a1b61926bb"
+	admpw "5cf5eb0308a00801b7b6a2eafa03b8c283f4ccdb1c052b84fac580a3a5b14cf1"
+/c/sys/access/mgmt/add 192.168.0.0 255.255.255.224 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.1.0 255.255.255.224 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.3.0 255.255.255.224 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.5.0 255.255.255.248 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.6.0 255.255.255.248 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.7.0 255.255.255.248 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.12.0 255.255.255.128 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.184.0 255.255.255.0 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.153.20 255.255.255.255 ssh|telnet|http|https|snmp
+/c/sys/access/mgmt/add 192.168.154.30 255.255.255.255 ssh|telnet|http|https|snmp
+/c/sys/ssnmp
+	name "Exemple"
+	locn "Site Exemple"
+	cont "Site@exemple.fr"
+	rcomm "plop"
+	wcomm "plip"
+/c/sys/syslog
+	hst1 192.168.0.8 7 6
+	hst2 192.168.0.10 7 6
+/c/sys/sshd/on
+/c/l3/if 1
+	ena
+	ipver v4
+	addr 10.0.0.11
+	mask 255.255.255.0
+	broad 10.0.0.255
+	vlan 667
+/c/l3/gw 1
+	ena
+	ipver v4
+	addr 10.0.0.254
+	arp e
+/c/l3/frwd/local/add 10.0.0.254 255.255.255.0
+/c/l3/dns
+	prima 192.196.1.47
+	secon 10.0.0.19
+	dname "exemple.fr"
+/c/l3/vrrp/on
+/c/l3/vrrp/vr 1
+	ena
+	ipver v4
+	vrid 15
+	if 1
+	prio 200
+	addr 10.0.0.23
+	adver 2
+	share dis
+/c/l3/vrrp/vr 2
+	ena
+	ipver v4
+	vrid 16
+	if 1
+	prio 200
+	addr 10.0.0.24
+	adver 2
+	share dis
+/c/l3/vrrp/vr 3
+	ena
+	ipver v4
+	vrid 17
+	if 1
+	prio 200
+	addr 10.0.0.25
+	adver 2
+	share dis
+/c/l3/vrrp/vr 4
+	ena
+	ipver v4
+	vrid 18
+	if 1
+	prio 200
+	addr 10.0.0.26
+	adver 2
+	share dis
+/c/l3/vrrp/vr 5
+	ena
+	ipver v4
+	vrid 19
+	if 1
+	prio 200
+	addr 10.0.0.27
+	adver 2
+	share dis
+/c/l3/vrrp/vr 6
+	ena
+	ipver v4
+	vrid 20
+	if 1
+	prio 200
+	addr 10.0.0.28
+	adver 2
+	share dis
+/c/l3/vrrp/vr 7
+	ena
+	ipver v4
+	vrid 21
+	if 1
+	prio 200
+	addr 10.0.0.29
+	adver 2
+	share dis
+/c/l3/vrrp/vr 8
+	ena
+	ipver v4
+	vrid 22
+	if 1
+	prio 200
+	addr 10.0.0.30
+	adver 2
+	share dis
+/c/l3/vrrp/vr 9
+	ena
+	ipver v4
+	vrid 23
+	if 1
+	prio 200
+	addr 10.0.0.31
+	adver 2
+	share dis
+/c/l3/vrrp/vr 10
+	ena
+	ipver v4
+	vrid 24
+	if 1
+	prio 200
+	addr 10.0.0.32
+	adver 2
+	share dis
+/c/sys/ssnmp/snmpv3/taddr 1
+	name v1v2trap1
+	addr 10.11.12.13
+	taglist v1v2param1
+	pname v1v2param1
+/c/sys/ssnmp/snmpv3/taddr 2
+	name v1v2trap2
+	addr 10.9.8.54
+	taglist v1v2param2
+	pname v1v2param2
+/c/sys/ssnmp/snmpv3/tparam 1
+	name v1v2param1
+	mpmodel snmpv1
+	uname v1v2only
+	model snmpv1
+/c/sys/ssnmp/snmpv3/tparam 2
+	name v1v2param2
+	mpmodel snmpv1
+	uname v1v2only
+	model snmpv1
+/c/sys/ssnmp/snmpv3/notify 1
+	name v1v2Trap1
+	tag v1v2param1
+/c/sys/ssnmp/snmpv3/notify 2
+	name v1v2trap2
+	tag v1v2param2
+/c/sys/ssnmp/snmpv3/comm 1
+	index "trapComm1"
+	name "public"
+	uname "v1v2only"
+/c/sys/ssnmp/snmpv3/comm 2
+	index "v1v2Comm2"
+	name "public"
+	uname "v1v2only"
+/c/slb/ssl/certs/key WebManagementCert
+/c/slb/ssl/certs/request WebManagementCert
+/c/slb/ssl/certs/import request "WebManagementCert" text
+-----BEGIN CERTIFICATE REQUEST-----
+[Certif]
+-----END CERTIFICATE REQUEST-----
+/c/slb/ssl/certs/srvrcert WebManagementCert
+/c/slb/ssl/certs/import srvrcert "WebManagementCert" text
+-----BEGIN CERTIFICATE-----
+[Certif]
+-----END CERTIFICATE-----
+/c/slb
+	on
+/c/slb/adv
+	direct ena
+/c/slb/real 1
+	ena
+	ipver v4
+	rip 10.203.83.67
+	inter 10
+	name "server1"
+/c/slb/real 1/adv
+	submac ena
+/c/slb/real 2
+	ena
+	ipver v4
+	rip 10.203.85.68
+	inter 10
+	name "Server2"
+/c/slb/real 2/adv
+	submac ena
+/c/slb/real 3
+	ena
+	ipver v4
+	rip 10.203.85.69
+	name "Server3"
+/c/slb/real 3/adv
+	submac ena
+/c/slb/real 4
+	ena
+	ipver v4
+	rip 10.203.85.70
+	name "Server4"
+/c/slb/real 4/adv
+	submac ena
+/c/slb/real 5
+	ena
+	ipver v4
+	rip 10.203.83.71
+	name "Server5"
+/c/slb/real 7/adv
+	submac ena
+/c/slb/real 6
+	ena
+	ipver v4
+	rip 10.203.85.72
+	name "Server6"
+/c/slb/real 6/adv
+	submac ena
+/c/slb/real 7
+	ena
+	ipver v4
+	rip 10.203.85.73
+	name "Server7"
+/c/slb/real 9/adv
+	submac ena
+/c/slb/real 8
+	ena
+	ipver v4
+	rip 10.203.85.74
+	name "Server8"
+/c/slb/real 8/adv
+	submac ena
+/c/slb/real 9
+	ena
+	ipver v4
+	rip 10.203.85.75
+	inter 30
+	retry 3
+	name "Server9"
+/c/slb/real 9/adv
+	submac ena
+/c/slb/group 1
+	ipver v4
+	metric roundrobin
+	health http
+	backup r2
+	content "/test-service1"
+	add 1
+	name "service1"
+/c/slb/group 2
+	ipver v4
+	health http
+	backup r2
+	content "/test-service2"
+	add 1
+	name "service2"
+/c/slb/group 3
+	ipver v4
+	health http
+	backup r2
+	content "/test-service3"
+	add 1
+	name "service3"
+/c/slb/group 4
+	ipver v4
+	metric roundrobin
+	backup r2
+	add 1
+	name "service4"
+/c/slb/group 5
+	ipver v4
+	metric roundrobin
+	backup r2
+	add 1
+	name "service5"
+/c/slb/group 6
+	ipver v4
+	metric roundrobin
+	backup r2
+	add 1
+	name "service6"
+/c/slb/group 7
+	ipver v4
+	metric roundrobin
+	backup r2
+	add 1
+	name "service7"
+/c/slb/group 8
+	ipver v4
+	metric roundrobin
+	backup r2
+	add 1
+	name "service8"
+/c/slb/group 9
+	ipver v4
+	content "/"
+	add 3
+	add 4
+	name "service9"
+/c/slb/group 10
+	ipver v4
+	metric roundrobin
+	add 8
+	add 9
+	name "service10"
+/c/slb/pip/type port
+/c/slb/pip/type vlan
+/c/slb/pip/add 10.203.85.232 667
+/c/slb/port 13
+	client ena
+	server ena
+	proxy ena
+	filt ena
+	add 1-44
+	add 46-70
+	add 75-112
+	add 114-171
+	add 173-320
+	add 322-393
+	add 395-400
+	add 403-528
+	add 1001-1081
+/c/slb/port 14
+	client ena
+	server ena
+	proxy ena
+	filt ena
+	add 1-44
+	add 46-70
+	add 75-112
+	add 114-171
+	add 173-320
+	add 322-393
+	add 395-400
+	add 403-528
+	add 1001-1081
+/c/slb/virt 1
+	ena
+	ipver v4
+	vip 10.100.100.1
+	dname "Vip-service1"
+/c/slb/virt 1/service 80 http
+	group 1
+	rport 8000
+	pbind clientip
+	tmout 58
+/c/slb/virt 2
+	ena
+	ipver v4
+	vip 10.100.100.2
+	dname "vip-service2"
+/c/slb/virt 2/service 80 http
+	group 2
+	rport 9000
+	pbind clientip
+	tmout 58
+/c/slb/virt 3
+	ena
+	ipver v4
+	vip 10.100.100.3
+	dname "vip-service3"
+/c/slb/virt 3/service 80 http
+	group 3
+	rport 10000
+	pbind clientip
+	tmout 58
+/c/slb/virt 4
+	ena
+	ipver v4
+	vip 10.100.100.4
+	dname "vip-service4"
+/c/slb/virt 4/service 80 http
+	group 4
+	rport 11000
+	pbind clientip
+	tmout 58
+/c/slb/virt 5
+	ena
+	ipver v4
+	vip 10.100.100.5
+	dname "vip-service5"
+/c/slb/virt 5/service 80 http
+	group 5
+	rport 12000
+	pbind clientip
+	tmout 58
+/c/slb/virt 6
+	ena
+	ipver v4
+	vip 10.100.100.6
+	dname "vip-service6"
+/c/slb/virt 6/service 80 http
+	group 6
+	rport 13000
+	pbind clientip
+	tmout 58
+/c/slb/virt 7
+	ena
+	ipver v4
+	vip 10.100.100.7
+	dname "vip-service7"
+/c/slb/virt 7/service 80 http
+	group 7
+	rport 14000
+	pbind clientip
+	tmout 58
+/c/slb/virt 8
+	ena
+	ipver v4
+	vip 10.100.100.8
+	dname "vip-service8"
+/c/slb/virt 8/service 80 http
+	group 8
+	rport 15000
+	pbind clientip
+	tmout 58
+/c/slb/virt 9
+	ena
+	ipver v4
+	vip 10.100.100.9
+	dname "vip-service9"
+/c/slb/virt 9/service 80 http
+	group 9
+	rport 16000
+/c/slb/virt 10
+	ena
+	ipver v4
+	vip 10.100.100.10
+	dname "vip-service10"
+/c/slb/virt 10/service 80 http
+	group 10
+	rport 17000
+/c/slb/filt 1
+	name "10.203.0.252->10.203.137.45"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.45
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 2
+	name "10.203.0.252->10.203.137.47"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.47
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 3
+	name "10.203.0.252->10.203.137.50"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.50
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 4
+	name "10.203.0.252->10.203.137.52"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.52
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 5
+	name "10.203.0.252->10.203.137.53"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.53
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 6
+	name "10.203.0.252->10.203.137.54"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.54
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 7
+	name "10.203.0.252->10.203.137.55"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.55
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 8
+	name "10.203.0.252->10.203.137.57"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.57
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 9
+	name "10.203.0.252->10.203.137.59"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.59
+	dmask 255.255.255.255
+	vlan any
+/c/slb/filt 10
+	name "10.203.0.252->10.203.137.60"
+	ena
+	action allow
+	ipver v4
+	sip 10.203.0.252
+	smask 255.255.255.255
+	dip 10.203.137.60
+	dmask 255.255.255.255
+	vlan any
+/c/slb/gslb
+	off
+	version 4
+	port 81
+	sinter 10
+	timeout 1
+	hostlk ena
+	encrypt dis
+/c/slb/gslb/site 1
+	dis
+	primaipver v4
+	prima 10.21.12.21
+	seconipver v4
+	secon 10.21.12.22
+	name "test"
+/c/slb/gslb/rule 1
+	ena
+	ttl 3
+	rr 1
+/c/slb/gslb/rule 1/metric 1
+	gmetric roundrobin
+/c/slb/gslb/rule 2
+	ena
+	ttl 3
+	rr 1
+/c/slb/gslb/rule 2/metric 1
+	gmetric remote
+/c/slb/gslb/rule 2/metric 2
+	gmetric local
+/c/slb/gslb/rule 3
+	ena
+	ttl 3
+	rr 1
+/c/slb/gslb/rule 3/metric 1
+	gmetric local
+/c/slb/gslb/rule 3/metric 2
+	gmetric remote
+/c/sys/access/https/cert WebManagementCert
+/c/sys/access/https/https e
+/
+script end  /**** DO NOT EDIT THIS LINE!
