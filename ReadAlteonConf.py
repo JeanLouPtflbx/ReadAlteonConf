@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 '''
+----------------------------------------------------
 autheur : Jean-lou Schmidt
+mail    : Jeanlou.schmidt@gmail.com
+
 version : 0.3 le 06/03/2014
+----------------------------------------------------
 
 Changelog 0.3 :
     - Nouveau selecteur de fichier de conf
@@ -17,6 +21,10 @@ Changelog 0.5 :
 
 Changelog 0.6 :
     - Changement esthetique
+
+----------------------------------------------------
+This program is released under GPLv3 license
+----------------------------------------------------
 '''
 from bottle import route, run, get, post, request, template
 import os
